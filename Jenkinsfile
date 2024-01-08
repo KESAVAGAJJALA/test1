@@ -25,6 +25,7 @@ pipeline {
             steps {
                 sh 'pwd;cd terraform/ ; terraform init'
                 sh "pwd;cd terraform/ ; terraform plan -out tfplan"
+                sh "pwd;cd terraform/ ; terraform apply --auto-approve"
             }
         }
         stage('Approval') {
